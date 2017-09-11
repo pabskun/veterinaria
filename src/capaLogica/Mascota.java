@@ -15,4 +15,73 @@ public class Mascota {
     private String tipo;
     private String raza;
     
+    public void Mascota(){
+        setIdentificacion("");
+        setNombre("");
+        setTipo("");
+        setRaza("");
+    }
+    public void Mascota(String pidentificacion, String pnombre, String ptipo, String praza){
+        setIdentificacion(pidentificacion);
+        setNombre(pnombre);
+        setTipo(ptipo);
+        setRaza(praza);
+    }
+
+    /**
+     * @return the identificacion
+     */
+    public String getIdentificacion() {
+        return identificacion;
+    }
+
+    /**
+     * @param identificacion the identificacion to set
+     */
+    public void setIdentificacion(String identificacion) {
+        this.identificacion = identificacion;
+    }
+
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    /**
+     * @return the tipo
+     */
+    public String getTipo() {
+        return tipo;
+    }
+
+    /**
+     * @param tipo the tipo to set
+     */
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    /**
+     * @return the raza
+     */
+    public String getRaza() {
+        return raza;
+    }
+
+    /**
+     * @param raza the raza to set
+     */
+    public void setRaza(String raza) {
+        this.raza = raza;
+    }
+    
 }

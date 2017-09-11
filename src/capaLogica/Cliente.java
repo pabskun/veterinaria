@@ -17,14 +17,14 @@ public class Cliente {
         setIdentificacion("");
         setNombre("");
         setCorreo("");
-	listaMascotas=null;
+	listaMascotas = null;
     } 
     
     public Cliente(String pidentificacion,String pnombre, String pcorreo) {
         setIdentificacion(pidentificacion);
         setNombre(pnombre);
         setCorreo(pcorreo);
-	listaMascotas=null;
+	listaMascotas = null;
     }  
 
     /**
