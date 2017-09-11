@@ -4,25 +4,26 @@
  * and open the template in the editor.
  */
 package capaPresentacion;
-import capaLogica.Cliente;
+
 import capaLogica.*;
 import java.util.ArrayList;
 
 import javax.swing.table.DefaultTableModel;
-
 
 /**
  *
  * @author Pabs
  */
 public class pantallaMenu extends javax.swing.JFrame {
+
     Gestor gestor = new Gestor();
+
     /**
      * Creates new form pantallaMenu
      */
     public pantallaMenu() {
         initComponents();
-        
+
     }
 
     /**
@@ -191,6 +192,11 @@ public class pantallaMenu extends javax.swing.JFrame {
             }
         ));
         jScrollPane2.setViewportView(tblClientes);
+        if (tblClientes.getColumnModel().getColumnCount() > 0) {
+            tblClientes.getColumnModel().getColumn(0).setHeaderValue("Identificación");
+            tblClientes.getColumnModel().getColumn(1).setHeaderValue("Nombre");
+            tblClientes.getColumnModel().getColumn(2).setHeaderValue("Correo");
+        }
 
         javax.swing.GroupLayout iuListarClienteLayout = new javax.swing.GroupLayout(iuListarCliente);
         iuListarCliente.setLayout(iuListarClienteLayout);
@@ -267,25 +273,25 @@ public class pantallaMenu extends javax.swing.JFrame {
 
     private void btnAgregarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarClientesMouseClicked
         contenedorPrincipal.removeAll();
-       contenedorPrincipal.repaint();
-       contenedorPrincipal.revalidate();
-       
-       //agregar el nuevo panel
-       contenedorPrincipal.add(iuRegistrarCliente);
-       contenedorPrincipal.repaint();
-       contenedorPrincipal.revalidate();
+        contenedorPrincipal.repaint();
+        contenedorPrincipal.revalidate();
+
+        //agregar el nuevo panel
+        contenedorPrincipal.add(iuRegistrarCliente);
+        contenedorPrincipal.repaint();
+        contenedorPrincipal.revalidate();
     }//GEN-LAST:event_btnAgregarClientesMouseClicked
 
     private void btnListarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnListarClientesMouseClicked
-         contenedorPrincipal.removeAll();
-       contenedorPrincipal.repaint();
-       contenedorPrincipal.revalidate();
-       
-       //agregar el nuevo panel
-       contenedorPrincipal.add(iuListarCliente);
-       contenedorPrincipal.repaint();
-       contenedorPrincipal.revalidate();
-       mostrarTabla();
+        contenedorPrincipal.removeAll();
+        contenedorPrincipal.repaint();
+        contenedorPrincipal.revalidate();
+
+        //agregar el nuevo panel
+        contenedorPrincipal.add(iuListarCliente);
+        contenedorPrincipal.repaint();
+        contenedorPrincipal.revalidate();
+        mostrarTabla();
     }//GEN-LAST:event_btnListarClientesMouseClicked
 
     private void txtIdentificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdentificacionActionPerformed
@@ -296,13 +302,11 @@ public class pantallaMenu extends javax.swing.JFrame {
         String identificacion, nombre, correo;
 
         try {
-            if(validarFormularioRegistroCliente() == true){
-            
-           
-            outputMensaje.setText("Llene los espacios en blanco");
-            
-            
-            }else{
+            if (validarFormularioRegistroCliente() == true) {
+
+                outputMensaje.setText("Llene los espacios en blanco");
+
+            } else {
                 identificacion = txtIdentificacion.getText();
                 nombre = txtNombre.getText();
                 correo = txtCorreo.getText();
@@ -312,11 +316,8 @@ public class pantallaMenu extends javax.swing.JFrame {
                 txtCorreo.setText("");
                 outputMensaje.setText("El cliente ha sido agregado");
             }
-            
-            
-            
-        }
-        catch (Exception ex) {
+
+        } catch (Exception ex) {
             outputMensaje.setText("El cliente no ha sido agregado, ocurrió el siguiente error " + ex.getMessage());
             //JOptionPane.showMessageDialog(this,(String) ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
         }
@@ -326,38 +327,41 @@ public class pantallaMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistrarClienteActionPerformed
 
-    private void mostrarTabla(){
+    private void mostrarTabla() {
         limpiarTabla();
-        DefaultTableModel model = (DefaultTableModel)tblClientes.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblClientes.getModel();
         ArrayList<Cliente> listaClientes = gestor.getListaClientes();
         Object rowData[] = new Object[3];
-        for(int i = 0; i < listaClientes.size(); i++){
+        for (int i = 0; i < listaClientes.size(); i++) {
             rowData[0] = listaClientes.get(i).getIdentificacion();
             rowData[1] = listaClientes.get(i).getNombre();
             rowData[2] = listaClientes.get(i).getCorreo();
             model.addRow(rowData);
         }
     }
-    private void limpiarTabla(){
-        DefaultTableModel model = (DefaultTableModel)tblClientes.getModel();
+
+    private void limpiarTabla() {
+        DefaultTableModel model = (DefaultTableModel) tblClientes.getModel();
         int rowCount = model.getRowCount();
         //Remove rows one by one from the end of the table
         for (int i = rowCount - 1; i >= 0; i--) {
             model.removeRow(i);
         }
     }
-    private Boolean validarFormularioRegistroCliente(){
+
+    private Boolean validarFormularioRegistroCliente() {
         String identificacion, nombre, correo;
         boolean error = false;
         identificacion = txtIdentificacion.getText();
         nombre = txtNombre.getText();
         correo = txtCorreo.getText();
-        if(identificacion.equals("") || nombre.equals("") || correo.equals("")) {
+        if (identificacion.equals("") || nombre.equals("") || correo.equals("")) {
             error = true;
-        } 
-            return error;
-        
+        }
+        return error;
+
     }
+
     /**
      * @param args the command line arguments
      */
@@ -384,7 +388,7 @@ public class pantallaMenu extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(pantallaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -392,12 +396,7 @@ public class pantallaMenu extends javax.swing.JFrame {
                 new pantallaMenu().setVisible(true);
             }
         });
-        
-      
-        
-        
-        
-        
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

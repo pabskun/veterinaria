@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package capaLogica;
+
 import java.util.*;
 
 /**
@@ -11,6 +12,7 @@ import java.util.*;
  * @author Pabs
  */
 public class Gestor {
+
     private ArrayList<Cliente> listaClientes = new ArrayList<>();
 
     /**
@@ -23,10 +25,9 @@ public class Gestor {
     /**
      * @param listaClientes the listaClientes to set
      */
-    public void agregarCliente(String pidentificacion, String pnombre, String pcorreo ) {
-        Cliente objCliente = new Cliente(pidentificacion,pnombre,pcorreo);
+    public void agregarCliente(String pidentificacion, String pnombre, String pcorreo) {
+        Cliente objCliente = new Cliente(pidentificacion, pnombre, pcorreo);
         listaClientes.add(objCliente);
     }
-    
-  
+
 }

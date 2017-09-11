@@ -10,18 +10,20 @@ package capaLogica;
  * @author Pabs
  */
 public class Mascota {
+
     private String identificacion;
     private String nombre;
     private String tipo;
     private String raza;
-    
-    public void Mascota(){
+
+    public void Mascota() {
         setIdentificacion("");
         setNombre("");
         setTipo("");
         setRaza("");
     }
-    public void Mascota(String pidentificacion, String pnombre, String ptipo, String praza){
+
+    public void Mascota(String pidentificacion, String pnombre, String ptipo, String praza) {
         setIdentificacion(pidentificacion);
         setNombre(pnombre);
         setTipo(ptipo);
@@ -83,5 +85,5 @@ public class Mascota {
     public void setRaza(String raza) {
         this.raza = raza;
     }
-    
+
 }

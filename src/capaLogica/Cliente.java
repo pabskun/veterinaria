@@ -20,12 +20,12 @@ public class Cliente {
 	listaMascotas = null;
     } 
     
-    public Cliente(String pidentificacion,String pnombre, String pcorreo) {
+    public Cliente(String pidentificacion, String pnombre, String pcorreo) {
         setIdentificacion(pidentificacion);
         setNombre(pnombre);
         setCorreo(pcorreo);
-	listaMascotas = null;
-    }  
+        listaMascotas = null;
+    }
 
     /**
      * @return the identificacion
