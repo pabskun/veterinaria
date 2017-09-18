@@ -8,7 +8,6 @@ package capaPresentacion;
 import capaLogica.*;
 import java.util.ArrayList;
 
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,7 +15,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class pantallaMenu extends javax.swing.JFrame {
 
-    Gestor gestor = new Gestor();
+    public static Gestor gestor = new Gestor();
+    
 
     /**
      * Creates new form pantallaMenu
@@ -272,9 +272,7 @@ public class pantallaMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarClientesMouseClicked
-        contenedorPrincipal.removeAll();
-        contenedorPrincipal.repaint();
-        contenedorPrincipal.revalidate();
+        limpiarContenedor();
 
         //agregar el nuevo panel
         contenedorPrincipal.add(iuRegistrarCliente);
@@ -283,15 +281,14 @@ public class pantallaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarClientesMouseClicked
 
     private void btnListarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnListarClientesMouseClicked
-        contenedorPrincipal.removeAll();
-        contenedorPrincipal.repaint();
-        contenedorPrincipal.revalidate();
+        limpiarContenedor();
 
         //agregar el nuevo panel
-        contenedorPrincipal.add(iuListarCliente);
+        
+        contenedorPrincipal.add(new listarClientes());
         contenedorPrincipal.repaint();
         contenedorPrincipal.revalidate();
-        mostrarTabla();
+      
     }//GEN-LAST:event_btnListarClientesMouseClicked
 
     private void txtIdentificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdentificacionActionPerformed
@@ -327,27 +324,7 @@ public class pantallaMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistrarClienteActionPerformed
 
-    private void mostrarTabla() {
-        limpiarTabla();
-        DefaultTableModel model = (DefaultTableModel) tblClientes.getModel();
-        ArrayList<Cliente> listaClientes = gestor.getListaClientes();
-        Object rowData[] = new Object[3];
-        for (int i = 0; i < listaClientes.size(); i++) {
-            rowData[0] = listaClientes.get(i).getIdentificacion();
-            rowData[1] = listaClientes.get(i).getNombre();
-            rowData[2] = listaClientes.get(i).getCorreo();
-            model.addRow(rowData);
-        }
-    }
-
-    private void limpiarTabla() {
-        DefaultTableModel model = (DefaultTableModel) tblClientes.getModel();
-        int rowCount = model.getRowCount();
-        //Remove rows one by one from the end of the table
-        for (int i = rowCount - 1; i >= 0; i--) {
-            model.removeRow(i);
-        }
-    }
+    
 
     private Boolean validarFormularioRegistroCliente() {
         String identificacion, nombre, correo;
@@ -360,6 +337,11 @@ public class pantallaMenu extends javax.swing.JFrame {
         }
         return error;
 
+    }
+    private void limpiarContenedor(){
+        contenedorPrincipal.removeAll();
+        contenedorPrincipal.repaint();
+        contenedorPrincipal.revalidate();
     }
 
     /**
@@ -388,7 +370,7 @@ public class pantallaMenu extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(pantallaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
