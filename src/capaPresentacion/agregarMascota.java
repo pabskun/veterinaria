@@ -128,7 +128,7 @@ public class agregarMascota extends javax.swing.JPanel {
     private void btnAgregarMascotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMascotaMouseClicked
         // TODO add your handling code here:
         int filaSeleccionada = tblClientes.getSelectedRow();
-        String idClienteSeleccionado = tblClientes.getModel().getValueAt(filaSeleccionada, 1).toString();
+        String idClienteSeleccionado = tblClientes.getModel().getValueAt(filaSeleccionada, 0).toString();
         Cliente clienteSeleccionado = pantallaMenu.gestor.buscarClienteId(idClienteSeleccionado);
 
         if (clienteSeleccionado == null) {

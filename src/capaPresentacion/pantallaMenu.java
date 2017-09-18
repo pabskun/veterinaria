@@ -55,7 +55,7 @@ public class pantallaMenu extends javax.swing.JFrame {
         btnClientes = new javax.swing.JMenu();
         btnAgregarClientes = new javax.swing.JMenu();
         btnListarClientes = new javax.swing.JMenu();
-        btnListarClientes1 = new javax.swing.JMenu();
+        btnListarMascotas = new javax.swing.JMenu();
         btnMascotas = new javax.swing.JMenu();
         btnCitas = new javax.swing.JMenu();
 
@@ -242,13 +242,13 @@ public class pantallaMenu extends javax.swing.JFrame {
         });
         btnClientes.add(btnListarClientes);
 
-        btnListarClientes1.setText("Listar mascotas");
-        btnListarClientes1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnListarMascotas.setText("Listar mascotas");
+        btnListarMascotas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnListarClientes1MouseClicked(evt);
+                btnListarMascotasMouseClicked(evt);
             }
         });
-        btnClientes.add(btnListarClientes1);
+        btnClientes.add(btnListarMascotas);
 
         jMenuBar1.add(btnClientes);
 
@@ -333,9 +333,15 @@ public class pantallaMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistrarClienteActionPerformed
 
-    private void btnListarClientes1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnListarClientes1MouseClicked
+    private void btnListarMascotasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnListarMascotasMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnListarClientes1MouseClicked
+         limpiarContenedor();
+
+        //agregar el nuevo panel
+        contenedorPrincipal.add(new listarMascotasCliente());
+        contenedorPrincipal.repaint();
+        contenedorPrincipal.revalidate();
+    }//GEN-LAST:event_btnListarMascotasMouseClicked
 
     
 
@@ -399,7 +405,7 @@ public class pantallaMenu extends javax.swing.JFrame {
     private javax.swing.JMenu btnCitas;
     private javax.swing.JMenu btnClientes;
     private javax.swing.JMenu btnListarClientes;
-    private javax.swing.JMenu btnListarClientes1;
+    private javax.swing.JMenu btnListarMascotas;
     private javax.swing.JMenu btnMascotas;
     private javax.swing.JButton btnRegistrarCliente;
     private javax.swing.JPanel contenedorPrincipal;

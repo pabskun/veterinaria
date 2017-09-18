@@ -24,7 +24,7 @@ public class Cliente {
         setIdentificacion(pidentificacion);
         setNombre(pnombre);
         setCorreo(pcorreo);
-        listaMascotas = null;
+        listaMascotas = new ArrayList<Mascota>();
     }
 
     /**
@@ -87,4 +87,7 @@ public class Cliente {
         this.listaMascotas.add(pobjMascota);
     }
 
+    public String toString(){
+        return this.nombre ;
+    }
 }

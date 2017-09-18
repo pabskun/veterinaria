@@ -44,5 +44,14 @@ public class Gestor {
         Mascota nuevaMascota = new Mascota(pidentificacion, pnombre, ptipo, praza);
         pobjCliente.asignarMascota(nuevaMascota);
     }
+    public ArrayList<Mascota> getListaMascotasCliente(String pidCliente){
+        ArrayList<Mascota> listaMascotas = null;
+        for (Cliente objCliente : listaClientes) {
+            if (objCliente.getIdentificacion().equals(pidCliente)) {
+                listaMascotas = objCliente.getListaMascotas();
+            }
+        }
+        return listaMascotas;
+    }
 
 }
