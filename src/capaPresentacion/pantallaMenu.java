@@ -55,6 +55,7 @@ public class pantallaMenu extends javax.swing.JFrame {
         btnClientes = new javax.swing.JMenu();
         btnAgregarClientes = new javax.swing.JMenu();
         btnListarClientes = new javax.swing.JMenu();
+        btnListarClientes1 = new javax.swing.JMenu();
         btnMascotas = new javax.swing.JMenu();
         btnCitas = new javax.swing.JMenu();
 
@@ -233,13 +234,21 @@ public class pantallaMenu extends javax.swing.JFrame {
         });
         btnClientes.add(btnAgregarClientes);
 
-        btnListarClientes.setText("Listar");
+        btnListarClientes.setText("Agregar mascota");
         btnListarClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnListarClientesMouseClicked(evt);
             }
         });
         btnClientes.add(btnListarClientes);
+
+        btnListarClientes1.setText("Listar mascotas");
+        btnListarClientes1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnListarClientes1MouseClicked(evt);
+            }
+        });
+        btnClientes.add(btnListarClientes1);
 
         jMenuBar1.add(btnClientes);
 
@@ -285,7 +294,7 @@ public class pantallaMenu extends javax.swing.JFrame {
 
         //agregar el nuevo panel
         
-        contenedorPrincipal.add(new listarClientes());
+        contenedorPrincipal.add(new agregarMascota());
         contenedorPrincipal.repaint();
         contenedorPrincipal.revalidate();
       
@@ -323,6 +332,10 @@ public class pantallaMenu extends javax.swing.JFrame {
     private void btnRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistrarClienteActionPerformed
+
+    private void btnListarClientes1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnListarClientes1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnListarClientes1MouseClicked
 
     
 
@@ -386,6 +399,7 @@ public class pantallaMenu extends javax.swing.JFrame {
     private javax.swing.JMenu btnCitas;
     private javax.swing.JMenu btnClientes;
     private javax.swing.JMenu btnListarClientes;
+    private javax.swing.JMenu btnListarClientes1;
     private javax.swing.JMenu btnMascotas;
     private javax.swing.JButton btnRegistrarCliente;
     private javax.swing.JPanel contenedorPrincipal;

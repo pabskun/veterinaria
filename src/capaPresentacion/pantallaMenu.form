@@ -19,10 +19,18 @@
             </Menu>
             <Menu class="javax.swing.JMenu" name="btnListarClientes">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Listar"/>
+                <Property name="text" type="java.lang.String" value="Agregar mascota"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnListarClientesMouseClicked"/>
+              </Events>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="btnListarClientes1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Listar mascotas"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnListarClientes1MouseClicked"/>
               </Events>
             </Menu>
           </SubComponents>

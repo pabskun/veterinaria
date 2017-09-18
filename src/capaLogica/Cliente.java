@@ -1,25 +1,25 @@
-
 package capaLogica;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
 
 /**
  *
  * @author Pabs
  */
 public class Cliente {
+
     private String identificacion;
     private String nombre;
     private String correo;
     private ArrayList<Mascota> listaMascotas;
-    
+
     public Cliente() {
         setIdentificacion("");
         setNombre("");
         setCorreo("");
-	listaMascotas = null;
-    } 
-    
+        listaMascotas = null;
+    }
+
     public Cliente(String pidentificacion, String pnombre, String pcorreo) {
         setIdentificacion(pidentificacion);
         setNombre(pnombre);
@@ -82,5 +82,9 @@ public class Cliente {
     public void setListaMascotas(ArrayList<Mascota> listaMascotas) {
         this.listaMascotas = listaMascotas;
     }
-    
+
+    public void asignarMascota(Mascota pobjMascota) {
+        this.listaMascotas.add(pobjMascota);
+    }
+
 }

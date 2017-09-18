@@ -16,18 +16,18 @@ public class Mascota {
     private String tipo;
     private String raza;
 
-    public void Mascota() {
-        setIdentificacion("");
-        setNombre("");
-        setTipo("");
-        setRaza("");
-    }
-
-    public void Mascota(String pidentificacion, String pnombre, String ptipo, String praza) {
+    public Mascota(String pidentificacion, String pnombre, String ptipo, String praza) {
         setIdentificacion(pidentificacion);
         setNombre(pnombre);
         setTipo(ptipo);
         setRaza(praza);
+    }
+
+    public Mascota() {
+        setIdentificacion("");
+        setNombre("");
+        setTipo("");
+        setRaza("");
     }
 
     /**

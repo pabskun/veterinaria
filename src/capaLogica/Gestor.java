@@ -26,8 +26,23 @@ public class Gestor {
      * @param listaClientes the listaClientes to set
      */
     public void agregarCliente(String pidentificacion, String pnombre, String pcorreo) {
-        Cliente objCliente = new Cliente(pidentificacion, pnombre, pcorreo);
-        listaClientes.add(objCliente);
+        Cliente nuevoCliente = new Cliente(pidentificacion, pnombre, pcorreo);
+        listaClientes.add(nuevoCliente);
+    }
+
+    public Cliente buscarClienteId(String pId) {
+        Cliente clienteEncontrado = null;
+        for (Cliente objCliente : listaClientes) {
+            if (objCliente.getIdentificacion().equals(pId)) {
+                clienteEncontrado = objCliente;
+            }
+        }
+        return clienteEncontrado;
+    }
+
+    public void agregarMascotaCliente(Cliente pobjCliente, String pidentificacion, String pnombre, String ptipo, String praza) {
+        Mascota nuevaMascota = new Mascota(pidentificacion, pnombre, ptipo, praza);
+        pobjCliente.asignarMascota(nuevaMascota);
     }
 
 }
